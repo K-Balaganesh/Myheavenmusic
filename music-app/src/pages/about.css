@@ -1,0 +1,128 @@
+/* About.css */
+
+/* --- General Layout and Background --- */
+.about-container {
+    padding: 30px 40px;
+    color: var(--text-color, #f0f0f0); /* Uses a global text color variable or defaults */
+    background: var(--main-bg-color, #121212); /* Main dark background */
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Header Styling --- */
+.about-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color, #282828);
+}
+
+.about-header h1 {
+    font-size: 3em;
+    color: var(--primary-color, #1db954); /* Use your app's main accent color */
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.about-header p {
+    font-size: 1.2em;
+    color: #b3b3b3;
+}
+
+/* --- Section Styling --- */
+.about-section {
+    margin-bottom: 40px;
+    padding: 20px 0;
+}
+
+.section-title {
+    font-size: 2.2em;
+    color: #ffffff;
+    border-left: 5px solid var(--primary-color, #1db954);
+    padding-left: 15px;
+    margin-bottom: 25px;
+}
+
+/* --- Mission Card --- */
+.mission-card {
+    background: var(--card-bg-color, #282828);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* --- Features List --- */
+.features-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    /* Creates a responsive grid with a minimum card width of 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px;
+}
+
+.features-list li {
+    background: var(--card-bg-color, #282828);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    border: 1px solid #333;
+}
+
+.features-list li:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color, #1db954);
+}
+
+.features-list h3 {
+    color: var(--primary-color, #1db954);
+    margin-top: 0;
+    font-size: 1.3em;
+}
+
+.features-list p {
+    color: #ccc;
+}
+
+/* --- Team Section --- */
+.team p {
+    font-size: 1.1em;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* --- Footer --- */
+.about-footer {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 40px;
+    border-top: 1px solid #282828;
+}
+
+.about-footer p {
+    color: #888;
+    font-style: italic;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 20px 20px;
+    }
+
+    .about-header h1 {
+        font-size: 2.5em;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+    }
+    
+    .features-list {
+        grid-template-columns: 1fr; /* Stack features on small screens */
+    }
+}

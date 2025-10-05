@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #121212;
+  color: white;
+}
+
+header.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1db954;
+  padding: 1rem;
+}
+
+header.header h1 {
+  margin: 0;
+}
+
+header.header nav a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+header.header nav button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.song-card {
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 0.5rem;
+  text-align: center;
+}
+
+.song-card h3 {
+  margin: 0.5rem 0;
+}
+
+.playlist {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #222;
+  border-radius: 10px;
+}
+
+.playlist-form {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.playlist-form input {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  margin-right: 0.5rem;
+}
+
+.playlist-form button {
+  background: #1db954;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}

@@ -1,0 +1,195 @@
+/* --- Google Font Import (Dancing Script) --- */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+
+/* --- 1. Global Home Dashboard Container (UPDATED PADDING) --- */
+.home-dashboard {
+    /* Reduced top padding from 30px to 15px */
+    padding: 15px 30px 30px 30px; 
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.loading-message {
+    color: #b3b3b3;
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2rem;
+}
+
+/* --- 2. Personalized Welcome Message Styles (UPDATED FONT SIZE) --- */
+
+.main-welcome {
+    font-family: 'Dancing Script', cursive; 
+    font-weight: 700;
+    
+    /* Font Size reduced from 4rem to 3rem */
+    font-size: 3rem; 
+    
+    /* Centering and Sizing */
+    text-align: center; 
+    margin-bottom: 25px; /* Slightly reduced margin below the header */
+    display: block;
+    padding-left: 0; 
+    border-left: none; 
+}
+
+/* --- ALL Text Parts set to White (UNCHANGED) --- */
+.welcome-text,
+.name-color,
+.heaven-color {
+    color: #ffffff; 
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+}
+
+.welcome-text:hover
+{
+    color: #1ddc00; /* Golden Color */
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7); 
+}
+.name-color:hover
+{
+    color: #1ddc00; /* Golden Color */
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7); 
+}
+
+.heaven-color:hover
+{
+    color: #22ff00; /* Golden Color */
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7); 
+}
+
+.username-text {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.name-color {
+    padding: 0; 
+    background: none; 
+    margin-right: 8px;
+    font-size: 1em; 
+    line-height: 1.2;
+}
+
+
+/* --- 3. Song Section Headers (Rows) --- */
+.song-section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    cursor: default; 
+}
+
+/* --- 4. Horizontal Scrolling Container and Train Effect --- */
+.song-row-container {
+    overflow-x: hidden; 
+    overflow-y: hidden;
+    padding: 10px 0; 
+}
+
+.song-row-content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; 
+    white-space: nowrap; 
+    will-change: transform; 
+}
+
+/* Keyframe definition for the continuous scrolling animation */
+@keyframes scroll-train {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        /* Width of 6 cards + 6 gaps (1320px) */
+        transform: translateX(-1320px); 
+    }
+}
+
+/* Apply the animation when hovering over the ENTIRE SECTION */
+.song-section:hover .song-row-content {
+    animation: scroll-train 30s linear infinite; 
+}
+
+/* Pause animation when hovering over an individual card */
+.song-section:hover .song-card:hover {
+    animation-play-state: paused;
+    
+}
+
+/* --- 5. Song Card Styling --- */
+.song-row-content .song-card {
+    flex: 0 0 auto; 
+    width: 200px; 
+    height: 280px; 
+    box-sizing: border-box; 
+    background-color: #1a1a1a; 
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, border 0.3s; /* Added transition for box-shadow and border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    text-align: left;
+}
+
+.song-row-content .song-card:hover {
+    background-color: #282828; 
+    transform: translateY(-3px);
+    /* MODIFIED: Added the requested green shadow effect on hover */
+    box-shadow: 0 0 15px #00ff59, 0 4px 15px rgba(0, 0, 0, 0.7); 
+    border: 1px solid #00ff59; /* Optional: adds a slight green border on hover */
+}
+
+.song-row-content .song-card.is-playing {
+    border: 5px solid #00ff59; 
+    box-shadow: 0 0 15px rgba(0, 255, 89, 0.7);
+}
+
+.song-row-content .song-card:hover h4,
+.song-row-content .song-card:hover p,
+.song-row-content .song-card.is-playing h4,
+.song-row-content .song-card.is-playing p {
+    color: #ffffff; 
+}
+
+
+.song-row-content .song-card img.cover {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0 auto 10px;
+    display: block;
+}
+
+.song-row-content .song-card h4 {
+    color: #e0e0e0; 
+    margin: 5px 0;
+    font-size: 18px;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.3s ease;
+}
+
+.song-row-content .song-card p {
+    color: #b3b3b3;
+    margin: 3px 0;
+    font-size: 14px;
+    white-space: normal;
+    transition: color 0.3s ease;
+}
+
+.song-row-content .song-card p.song-detail {
+    font-style: italic;
+    font-size: 12px;
+    color: #727272;
+    transition: color 0.3s ease;
+}

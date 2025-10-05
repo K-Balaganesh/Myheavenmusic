@@ -1,0 +1,132 @@
+/* --- Page Container --- */
+.category-detail-page {
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #121212;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+.detail-title {
+    color: #1db954; /* Spotify green */
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.song-count {
+    color: #b3b3b3;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+/* --- Grid layout for the song list --- */
+.song-grid {
+    display: grid;
+    /* 6 columns for desktop layout */
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 20px;
+}
+
+/* --- Song Card Appearance --- */
+.song-grid .song-card {
+    width: auto; 
+    height: 280px; 
+    background-color: #1a1a1a; 
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.song-grid .song-card:hover {
+    background-color: #282828; 
+    transform: translateY(-3px);
+}
+
+.song-grid .song-card.is-playing {
+    border: 2px solid #1db954;
+    box-shadow: 0 0 15px rgba(29, 185, 84, 0.7);
+}
+
+.song-grid .song-card img.cover {
+    width: 100%; 
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0 auto 10px;
+    display: block;
+}
+
+/* The .song-info wrapper is crucial to ensure text content respects the padding */
+.song-grid .song-card .song-info {
+    /* Takes up the remaining vertical space */
+    flex-grow: 1; 
+    /* The 100% width is key to making text truncation work reliably inside the padded card */
+    width: 100%; 
+    min-height: 0; /* Ensures content doesn't force height expansion */
+}
+
+/* --- GUARANTEED TEXT TRUNCATION FIX --- */
+
+.song-grid .song-card h4,
+.song-grid .song-card .artist-name,
+.song-grid .song-card .movie-name {
+    /* Step 1: Force text to stay on one line */
+    white-space: nowrap;
+    /* Step 2: Hide any overflow */
+    overflow: hidden;
+    /* Step 3: Show ellipsis for hidden content */
+    text-overflow: ellipsis;
+    /* Step 4 (Crucial): Must be a block or inline-block element to use text-overflow/width properties */
+    display: block; 
+}
+
+.song-grid .song-card h4 {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.song-grid .song-card .artist-name {
+    font-size: 0.85rem;
+    color: #b3b3b3;
+    margin-bottom: 2px;
+}
+
+.song-grid .song-card .movie-name {
+    font-size: 0.75rem;
+    color: #777777;
+}
+
+/* --- Mobile Responsiveness (Grid changes) --- */
+@media (max-width: 1200px) {
+    .song-grid {
+        /* 4 columns on medium screens */
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .song-grid {
+        /* 3 columns on tablet screens */
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .song-grid {
+        /* 2 columns on mobile screens */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .category-detail-page {
+        padding: 15px;
+    }
+}

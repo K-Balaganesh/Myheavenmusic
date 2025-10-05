@@ -1,0 +1,146 @@
+/* NEW: Import the handwriting font (e.g., 'Dancing Script').
+  If you are not using Google Fonts or want a different font,
+  replace this URL with your font's import/link method.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+/* 🌐 GENERAL BODY FIX */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevent horizontal scroll */
+  background-color: #121212;
+}
+
+/* Navbar container */
+.navbar {
+  width: 100%;
+  /* Use a subtle dark gradient */
+  background: linear-gradient(90deg, #121212, #1a1a1a);
+  
+  /* MODIFIED: Reduced horizontal padding to gain screen width */
+  padding: 25px 30px; 
+  
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+/* Title/Branding Section */
+.navbar-brand {
+  /* MODIFIED: Reduced margin right to decrease space between title and links */
+  margin-right: 15px; 
+  
+  color: #1ddc00; /* Golden Color */
+  font-family: 'Dancing Script', cursive; /* Applied Handwriting Font */
+  font-size: 35px; 
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.7); 
+  transition: transform 0.3s ease;
+  flex-shrink: 0; 
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+  color: #ffe600;
+}
+
+/* Navbar list */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  
+  /* MODIFIED: Drastically decreased gap between individual nav links */
+  gap: 18px; 
+  
+  margin: 0px; 
+  padding-right: 50px;
+  
+  align-items: center;
+  flex-wrap: wrap; 
+  justify-content: flex-end; 
+}
+
+/* Navbar links */
+.navbar ul li a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-family: 'Arial', sans-serif; 
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  
+  /* MODIFIED: Slightly reduced padding on links to save horizontal space */
+  padding: 8px 10px;
+  
+  border-radius: 30px;
+  border: 2px solid transparent; 
+  background-color: transparent;
+}
+
+/* Standardized Hover Effect for all Links */
+.navbar ul li a:hover {
+  background-color: #00ff59;
+  color: #000000;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(23, 132, 61, 0.5);
+  border: 2px solid #003b15;
+}
+
+
+/* Logout button */
+.navbar ul li button {
+  /* RED COLOR MODIFICATION */
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  border: 2px solid #cc0000; /* Red Border */
+  background-color: rgba(204, 0, 0, 0.2); /* Light Red Background */
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.navbar ul li button:hover {
+  /* Hover effect for red button */
+  background-color: #cc0000; /* Solid Red on hover */
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(204, 0, 0, 0.5);
+}
+
+/* Special style for the "Already Sign in?" text */
+.navbar ul li.sign-in-message {
+  color: #ff5252;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+/* Responsive: stack navbar items on small screens */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column; 
+    padding: 10px 20px;
+    gap: 10px;
+  }
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 0;
+    width: 100%; 
+    align-items: center;
+  }
+  
+  /* Reset margin on brand for small screens */
+  .navbar-brand {
+    margin-right: 0;
+  }
+}

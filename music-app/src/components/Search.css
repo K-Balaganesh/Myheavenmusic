@@ -1,0 +1,153 @@
+/* --- 1. Layout Container & Search Area --- */
+.search-page-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.search-input-area {
+    padding: 20px 0;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-input-area input {
+    width: 80%;
+    max-width: 600px;
+    padding: 12px 20px;
+    border: 2px solid #1DB954; 
+    border-radius: 30px;
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+/* --- NEW STYLES FOR SUGGESTIONS --- */
+.recent-suggestions {
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    padding: 0 10px;
+}
+
+.suggestion-label {
+    color: #b3b3b3;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.suggestion-pill {
+    background-color: #4a4a4a; /* Dark gray background */
+    color: #ffffff;
+    border: 1px solid #5a5a5a;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.2s, border-color 0.2s;
+    white-space: nowrap; /* Keep text on one line */
+}
+
+.suggestion-pill:hover {
+    background-color: #1DB954; /* Spotify green on hover */
+    border-color: #1DB954;
+}
+
+.search-hint {
+    color: #b3b3b3;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* --- Song List & Card Styles --- */
+
+.song-list {
+    display: grid;
+    /* Card size now drives the minimum width for grid columns */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    /* MODIFIED: Reduced space between cards */
+    gap: 10px; 
+    padding: 0px 0;
+    justify-items: center; 
+}
+
+.song-card {
+    background-color: #1a1a1a; 
+    border-radius: 10px;
+    /* Card size change was requested, using margin/padding for spacing */
+    margin: 15px;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, border-color 0.3s; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 400px; /* MODIFIED: Increased card size */
+    box-sizing: border-box; 
+    border: 2px solid transparent; /* Added transparent border for consistent sizing */
+}
+
+/* MODIFIED: Removed background/color change, added green shadow */
+.song-card:hover {
+    /* Background and text color are removed, using original dark theme */
+    background-color: #1a1a1a; 
+    transform: none; /* Removed the lift effect */
+    
+    /* MODIFIED: Set the shadow effect to #00ff59 */
+    border-color: #00ff59; 
+    box-shadow: 0 0 15px #00ff59; 
+}
+
+/* Text color changes on hover for better visibility */
+.song-card:hover h4,
+.song-card:hover p {
+    color: #ffffff; 
+}
+
+/* Text color for the currently playing card */
+.song-card.is-playing h4,
+.song-card.is-playing p {
+    color: #ffffff; 
+}
+
+.song-card.is-playing {
+    border: 2px solid #1DB954; 
+    box-shadow: 0 0 15px rgba(29, 185, 84, 0.7);
+}
+
+.song-card img.cover {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.song-card h4 {
+    color: #e0e0e0;
+    margin: 5px 0;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.3s ease;
+}
+
+.song-card p {
+    color: #b3b3b3;
+    margin: 3px 0;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.song-card p.song-detail {
+    font-style: italic;
+    font-size: 12px;
+    color: #727272;
+    transition: color 0.3s ease;
+}
