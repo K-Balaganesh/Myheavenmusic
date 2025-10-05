@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Myheavenmusic/static/css/main.f62b46c5.css",
+    "main.js": "/Myheavenmusic/static/js/main.875ac85a.js",
+    "index.html": "/Myheavenmusic/index.html",
+    "main.f62b46c5.css.map": "/Myheavenmusic/static/css/main.f62b46c5.css.map",
+    "main.875ac85a.js.map": "/Myheavenmusic/static/js/main.875ac85a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f62b46c5.css",
+    "static/js/main.875ac85a.js"
+  ]
+}
